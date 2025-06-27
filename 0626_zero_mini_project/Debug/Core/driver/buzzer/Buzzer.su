@@ -1,0 +1,4 @@
+../Core/driver/buzzer/Buzzer.c:13:6:Buzzer_Init	16	static
+../Core/driver/buzzer/Buzzer.c:19:6:Buzzer_SetFreq	16	static
+../Core/driver/buzzer/Buzzer.c:31:6:Buzzer_Start	8	static
+../Core/driver/buzzer/Buzzer.c:35:6:Buzzer_Stop	8	static

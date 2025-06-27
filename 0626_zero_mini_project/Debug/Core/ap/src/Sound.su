@@ -1,0 +1,6 @@
+../Core/ap/src/Sound.c:10:6:Sound_Init	8	static
+../Core/ap/src/Sound.c:15:6:Sound_POWERON	8	static
+../Core/ap/src/Sound.c:32:6:Sound_POWEROFF	8	static
+../Core/ap/src/Sound.c:49:6:Sound_Beethoven5	24	static
+../Core/ap/src/Sound.c:103:6:PlayNote	16	static
+../Core/ap/src/Sound.c:112:6:Sound_MerryChristmasMrLawrence	16	static

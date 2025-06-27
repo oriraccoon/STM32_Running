@@ -1,0 +1,39 @@
+/*
+ * Controller.h
+ *
+ *  Created on: Jun 24, 2025
+ *      Author: rhoblack
+ */
+
+#ifndef AP_CONTROLLER_H_
+#define AP_CONTROLLER_H_
+
+#include "stopWatch.h"
+#include "timeWatch.h"
+#include "Model_Watch.h"
+
+enum {STOPWATCH_RUN_STOP, STOPWATCH_CLEAR};
+enum {NO_CONTROL, LCD_MODE, RUN_STOP, MODE, SPEED, ULTRA, SONG};
+enum {LCD_OFF=0, RUN_DIST, CAL_SPEED, SONG_TITLE, WARNING};
+
+typedef struct {
+	int id;
+	int data;
+}inputData_TypeDef;
+
+typedef struct{
+	watch_t current_time;
+	watch_t running_time;
+	uint8_t speed;
+	uint8_t distance;
+	uint8_t calories;
+	uint8_t runstop;
+	uint8_t lcd_mode;
+	uint8_t song;
+	uint8_t uartRxData;
+} C2P_Data;
+
+void Controller_SetInputData(inputData_TypeDef inputData);
+void Controller_Excute();
+
+#endif /* AP_CONTROLLER_H_ */

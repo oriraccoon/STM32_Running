@@ -1,0 +1,4 @@
+../Core/driver/DC_Motor/DC_Motor.c:13:6:DC_Motor_Init	1
+../Core/driver/DC_Motor/DC_Motor.c:19:6:DC_Motor_SetFreq	6
+../Core/driver/DC_Motor/DC_Motor.c:31:6:DC_Motor_Start	1
+../Core/driver/DC_Motor/DC_Motor.c:35:6:DC_Motor_Stop	1

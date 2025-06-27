@@ -1,0 +1,17 @@
+../Core/ap/src/Presenter.c:42:6:Presenter_Init	1
+../Core/ap/src/Presenter.c:48:6:Presenter_OutData	1
+../Core/ap/src/Presenter.c:55:6:Presenter_Excute	1
+../Core/ap/src/Presenter.c:66:6:Presenter_DispLCD	6
+../Core/ap/src/Presenter.c:87:6:Presenter_DispMonitor	15
+../Core/ap/src/Presenter.c:131:6:Presenter_SpeedMotor	1
+../Core/ap/src/Presenter.c:138:6:Presenter_SongBuzzer	1
+../Core/ap/src/Presenter.c:144:6:Presenter_DispFnd_CurrentTime	2
+../Core/ap/src/Presenter.c:160:6:Presenter_DispMonitorInfo	1
+../Core/ap/src/Presenter.c:166:6:Presenter_DispMonitorSpeedInfo	1
+../Core/ap/src/Presenter.c:172:6:Presenter_DispMonitorSongInfo	1
+../Core/ap/src/Presenter.c:178:6:Presenter_DispMonitorDone	1
+../Core/ap/src/Presenter.c:189:6:Presenter_DispLCD_RUN_DIST	1
+../Core/ap/src/Presenter.c:201:6:Presenter_DispLCD_CAL_SPEED	1
+../Core/ap/src/Presenter.c:213:6:Presenter_DispLCD_SONG_TITLE	5
+../Core/ap/src/Presenter.c:228:6:Presenter_DispLCD_WARNING	1
+../Core/ap/src/Presenter.c:238:6:Presenter_DispLED_Dist	2

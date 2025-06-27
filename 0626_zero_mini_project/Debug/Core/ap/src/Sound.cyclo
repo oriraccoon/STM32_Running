@@ -1,0 +1,6 @@
+../Core/ap/src/Sound.c:10:6:Sound_Init	1
+../Core/ap/src/Sound.c:15:6:Sound_POWERON	1
+../Core/ap/src/Sound.c:32:6:Sound_POWEROFF	1
+../Core/ap/src/Sound.c:49:6:Sound_Beethoven5	1
+../Core/ap/src/Sound.c:103:6:PlayNote	1
+../Core/ap/src/Sound.c:112:6:Sound_MerryChristmasMrLawrence	1
