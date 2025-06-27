@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "usart.h"
 
+static int onOffFlag = 0;
+
 // fnd
 static void Presenter_DispFnd_CurrentTime(watch_t current_time);
 
@@ -29,7 +31,7 @@ static void Presenter_DispLCD_WARNING();
 static uint8_t prev_lcd_mode = LCD_OFF;
 
 // led
-static void Presenter_DispLED_Dist(uint32_t dist);
+static void Presenter_DispLED_Dist(double dist);
 
 // buzzer
 static void Presenter_SongBuzzer(uint8_t song);
@@ -45,18 +47,27 @@ void Presenter_Init()
 {
 	LCD_Init(&hi2c1);
 	Motor_Init();
+	Sound_Init();
 }
 
 
 // Behavior Func at ap_main.c
 void Presenter_Excute()
 {
+	if (p_data.runstop == 1 && onOffFlag == 0) {
+		onOffFlag = 1;
+		Sound_POWERON();
+	}
+	else if (p_data.runstop == 0 && onOffFlag == 1) {
+		onOffFlag = 0;
+		Sound_POWEROFF();
+	}
 	Controller_OutData(&p_data);
 	Presenter_DispLCD(p_data.lcd_mode);
 //	Presenter_DispMonitor(p_data.uartRxData);
 	Presenter_DispFnd_CurrentTime(p_data.current_time);
 	Presenter_DispLED_Dist(p_data.distance);
-//	Presenter_SongBuzzer(p_data.song);
+	//	Presenter_SongBuzzer(p_data.song);
 	Presenter_SpeedMotor(p_data.speed);
 }
 
@@ -141,7 +152,7 @@ void Presenter_SpeedMotor(uint8_t speed)
 // Buzzer
 void Presenter_SongBuzzer(uint8_t song)
 {
-
+	Sound_Beethoven5();
 }
 
 
@@ -242,10 +253,10 @@ void Presenter_DispLCD_WARNING()
 
 
 // LED (Dist)
-void Presenter_DispLED_Dist(uint32_t dist)
+void Presenter_DispLED_Dist(double dist)
 {
 	int led_data = 0;
-	if(dist%50==0) led_data = (led_data << 1) + 1;
+	if( (int)dist%50==0) led_data = (led_data << 1) + 1;
 
 	LedBar_Write(led_data);
 }

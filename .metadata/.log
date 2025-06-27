@@ -19,3 +19,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.dsf 4 10005 2025-06-27 16:34:02.629
 !MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@66cd3f05): Status OK: unknown code=0 OK' resulted in a rejected execution exception.
+
+!ENTRY com.st.stm32cube.ide.mcu.build 4 4 2025-06-27 17:25:00.505
+!MESSAGE Failed to check relative, returning possibly relative path: C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\Release/"" literal was "${workspace_loc:/${ProjName}/Core/ap/Src}"
+
+!ENTRY com.st.stm32cube.ide.mcu.build 4 4 2025-06-27 17:25:00.507
+!MESSAGE Failed to check relative, returning possibly relative path: C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\Release/"" literal was "${workspace_loc:/${ProjName}/Core/ap/Src}"
+
+!ENTRY com.st.stm32cube.ide.mcu.build 4 4 2025-06-27 17:25:07.991
+!MESSAGE Failed to check relative, returning possibly relative path: C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\Release/"" literal was "${workspace_loc:/${ProjName}/Core/ap/Src}"
+
+!ENTRY com.st.stm32cube.ide.mcu.build 4 4 2025-06-27 17:25:07.992
+!MESSAGE Failed to check relative, returning possibly relative path: C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\Release/"" literal was "${workspace_loc:/${ProjName}/Core/ap/Src}"
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-06-27 18:12:34.540
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@a066bbd): Status OK: unknown code=0 OK' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-06-27 18:22:25.911
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@36bcf98c): Status OK: unknown code=0 OK' resulted in a rejected execution exception.

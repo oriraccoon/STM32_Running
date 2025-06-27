@@ -7,6 +7,9 @@
 
 #include "ap_main.h"
 
+int inde = 0;
+int ind = 0;
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM2) {
@@ -14,6 +17,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		TimeWatch_IncTimeCallBack();
 		StopWatch_IncTimeCallBack();
+	}
+
+	if(htim->Instance == TIM5){ // buzzer
+		if (ind == 10) {
+			Buzzer_SetFreq(Song1[inde]);
+			Buzzer_Start();
+			inde++;
+			ind = 0;
+		}
+		else if (ind == 5)
+		{
+			Buzzer_Stop();
+			ind++;
+		}
+		else ind++;
 	}
 }
 
@@ -30,12 +48,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 int ap_main()
 {
 	HAL_TIM_Base_Start_IT(&htim2);
+	HAL_TIM_Base_Start_IT(&htim5);
 	while(1)
 	{
 		Listener_Excute();
 		Controller_Excute();
 		Presenter_Excute();
-//		Motor_Start(((1*100)+5000));
 
 	}
 
@@ -46,9 +64,6 @@ void ap_init()
 {
 	Listener_Init();
 	Presenter_Init();
-	Motor_Init();
-//	Sound_Init();
-//	Sound_POWERON();
 }
 
 

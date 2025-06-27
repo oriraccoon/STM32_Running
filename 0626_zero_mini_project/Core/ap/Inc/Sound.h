@@ -12,6 +12,8 @@
 #include "Octave.h"
 #include "tim.h"
 
+extern const int Song1[8];
+
 void Sound_Init();
 void Sound_POWERON();
 void Sound_POWEROFF();

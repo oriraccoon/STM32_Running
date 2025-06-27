@@ -1,29 +1,23 @@
-17:05:34 **** Incremental Build of configuration Debug for project 0626_zero_mini_project ****
+18:25:56 **** Incremental Build of configuration Debug for project 0626_zero_mini_project ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/ap/src/Controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/FND" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/src" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/LCD" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/buzzer" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/DC_Motor" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/Ultra" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/ap/src/Controller.d" -MT"Core/ap/src/Controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/ap/src/Controller.o"
-../Core/ap/src/Controller.c: In function 'Controller_OutData':
-../Core/ap/src/Controller.c:33:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-   33 |         memcpy(c2p_data, &OutputData, sizeof(C2P_Data));
-      |         ^~~~~~
-../Core/ap/src/Controller.c:8:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-    7 | #include "Controller.h"
-  +++ |+#include <string.h>
-    8 | 
-../Core/ap/src/Controller.c:33:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-   33 |         memcpy(c2p_data, &OutputData, sizeof(C2P_Data));
-      |         ^~~~~~
-../Core/ap/src/Controller.c:33:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc "../Core/ap/src/Presenter.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/FND" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/src" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/LCD" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/buzzer" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/DC_Motor" -I"C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/Ultra" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/ap/src/Presenter.d" -MT"Core/ap/src/Presenter.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/ap/src/Presenter.o"
+../Core/ap/src/Presenter.c:153:6: warning: 'Presenter_SongBuzzer' defined but not used [-Wunused-function]
+  153 | void Presenter_SongBuzzer(uint8_t song)
+      |      ^~~~~~~~~~~~~~~~~~~~
+../Core/ap/src/Presenter.c:101:6: warning: 'Presenter_DispMonitor' defined but not used [-Wunused-function]
+  101 | void Presenter_DispMonitor(char uartRxData)
+      |      ^~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "0626_zero_mini_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0626_zero_mini_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 0626_zero_mini_project.elf
  
 arm-none-eabi-size  0626_zero_mini_project.elf 
 arm-none-eabi-objdump -h -S 0626_zero_mini_project.elf  > "0626_zero_mini_project.list"
    text	   data	    bss	    dec	    hex	filename
-  46968	    688	   2544	  50200	   c418	0626_zero_mini_project.elf
+  47984	    736	   2632	  51352	   c898	0626_zero_mini_project.elf
 Finished building: default.size.stdout
  
 Finished building: 0626_zero_mini_project.list
  
 
-17:05:35 Build Finished. 0 errors, 2 warnings. (took 643ms)
+18:25:57 Build Finished. 0 errors, 2 warnings. (took 691ms)
 

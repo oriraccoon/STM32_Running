@@ -12,6 +12,8 @@ void Sound_Init()
 	Buzzer_Init(&htim3, TIM_CHANNEL_1);
 }
 
+const int Song1[8] = {392, 392, 392, 311, 349, 349, 349, 294};
+
 void Sound_POWERON()
 {
 	Buzzer_SetFreq(OCT5.DO);
@@ -26,7 +28,7 @@ void Sound_POWERON()
 	Buzzer_SetFreq(OCT5.SI);
 	Buzzer_Start();
 	HAL_Delay(200);
-	Buzzer_Stop();
+	Buzzer_Stop() ;
 }
 
 void Sound_POWEROFF()
@@ -75,6 +77,9 @@ void Sound_Beethoven5()
     Buzzer_Start();
     HAL_Delay(longDelay);
     Buzzer_Stop();
+    HAL_Delay(longGap);
+    HAL_Delay(longGap);
+    HAL_Delay(longGap);
     HAL_Delay(longGap);
 
     // 두 번째 패턴: FA FA FA RE

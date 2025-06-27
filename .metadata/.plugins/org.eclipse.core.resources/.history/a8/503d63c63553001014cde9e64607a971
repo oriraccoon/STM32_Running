@@ -1,0 +1,21 @@
+/*
+ * Sound.h
+ *
+ *  Created on: Jun 26, 2025
+ *      Author: kccistc
+ */
+
+#ifndef AP_INC_SOUND_H_
+#define AP_INC_SOUND_H_
+
+#include "Buzzer.h"
+#include "Octave.h"
+#include "tim.h"
+
+void Sound_Init();
+void Sound_POWERON();
+void Sound_POWEROFF();
+void Sound_Beethoven5();
+void Sound_MerryChristmasMrLawrence();
+
+#endif /* AP_INC_SOUND_H_ */

@@ -12,8 +12,8 @@
 #include "Listener.h"
 #include "Controller.h"
 #include "Presenter.h"
-#include "sound.h"
-
+#include "Sound.h"
+#include "Ultra.h"
 
 int ap_main();
 void ap_init();
