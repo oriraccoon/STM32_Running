@@ -56,7 +56,7 @@ void LCD_Init(I2C_HandleTypeDef *hI2C)
 
 void LCD_sendI2C(uint8_t data)
 {
-	HAL_I2C_Master_Transmit(hLcdI2C, LCD_DEV_ADDR<<1, &data, 1, 1000);
+	HAL_I2C_Master_Transmit(hLcdI2C, LCD_DEV_ADDR<<1, &data, 1, 10);
 }
 
 void LCD_backLightOn()

@@ -26,6 +26,8 @@ static void Presenter_DispLCD_CAL_SPEED(uint8_t calories, uint8_t speed);
 static void Presenter_DispLCD_SONG_TITLE(uint8_t song);
 static void Presenter_DispLCD_WARNING();
 
+static uint8_t prev_lcd_mode = LCD_OFF;
+
 // led
 static void Presenter_DispLED_Dist(uint32_t dist);
 
@@ -42,29 +44,29 @@ static C2P_Data p_data;
 void Presenter_Init()
 {
 	LCD_Init(&hi2c1);
-}
-
-// C2P
-void Presenter_OutData(C2P_Data c2p_data)
-{
-	memcpy(&p_data, &c2p_data, sizeof(C2P_Data));
+	Motor_Init();
 }
 
 
 // Behavior Func at ap_main.c
 void Presenter_Excute()
 {
+	Controller_OutData(&p_data);
 	Presenter_DispLCD(p_data.lcd_mode);
-	Presenter_DispMonitor(p_data.uartRxData);
+//	Presenter_DispMonitor(p_data.uartRxData);
 	Presenter_DispFnd_CurrentTime(p_data.current_time);
 	Presenter_DispLED_Dist(p_data.distance);
-	Presenter_SongBuzzer(p_data.song);
+//	Presenter_SongBuzzer(p_data.song);
 	Presenter_SpeedMotor(p_data.speed);
 }
 
 // LCD DISP
 void Presenter_DispLCD(uint8_t lcd_mode)
 {
+	if (prev_lcd_mode != lcd_mode) {
+		LCD_writeStringXY(0, 0, "                ");
+		LCD_writeStringXY(1, 0, "                ");
+	}
 	switch (lcd_mode) {
 		case LCD_OFF:
 			break;
@@ -81,6 +83,7 @@ void Presenter_DispLCD(uint8_t lcd_mode)
 			Presenter_DispLCD_WARNING();
 			break;
 	}
+	prev_lcd_mode = lcd_mode;
 }
 
 // UART DISP
@@ -130,7 +133,7 @@ void Presenter_DispMonitor(uint8_t uartRxData)
 // MOTOR RUN
 void Presenter_SpeedMotor(uint8_t speed)
 {
-	Motor_Start((speed + 5000));
+	Motor_Start(((speed*100)+5000));
 }
 
 

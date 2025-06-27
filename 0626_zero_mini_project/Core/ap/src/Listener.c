@@ -23,7 +23,7 @@ void Listener_Init()
 	Button_Init(&hBtnLcdMode, GPIOB, GPIO_PIN_5);
 	Button_Init(&hBtnRunStop, GPIOB, GPIO_PIN_3);
 	Button_Init(&hBtnSpeedUp, GPIOA, GPIO_PIN_10);
-	Button_Init(&hBtnSpeedDown, GPIOA, GPIO_PIN_10); // modify the pin number
+	Button_Init(&hBtnSpeedDown, GPIOA, GPIO_PIN_7); // modify the pin number
 
 	Que_Init(&uartRxQue);
 	HAL_UART_Receive_IT(&huart2, &rcvData, 1); // uart recv interrupt enable
@@ -38,48 +38,47 @@ void Listener_Excute()
 
 void Listener_CheckButton()
 {
-	static uint32_t prevChkBtnTime = 0;
-	uint32_t curTick = HAL_GetTick();
-	if (curTick - prevChkBtnTime < 100) {
-		return;
-	}
-	prevChkBtnTime = curTick;
+   static uint32_t prevChkBtnTime = 0;
+   uint32_t curTick = HAL_GetTick();
+   if (curTick - prevChkBtnTime < 100) {
+      return;
+   }
+   prevChkBtnTime = curTick;
 
-	if (Button_GetState(&hBtnLcdMode) == ACT_RELEASED) {
-		inputData.id = LCD_MODE;
-		if (inputData.data >= 3){
-			inputData.data = 1;
-		}
-		else{
-			inputData.data ++;
-		}
-		Controller_SetInputData(inputData);
-	}
-	else if (Button_GetState(&hBtnRunStop) == ACT_PUSHED) {
-		inputData.id = RUN_STOP;
-		inputData.data = 1;
-		Controller_SetInputData(inputData);
-	}
-	else if (Button_GetState(&hBtnSpeedUp) == ACT_PUSHED) {
-		inputData.id = SPEED;
-		if (inputData.data >= 9){
-			inputData.data = 9;
-		}
-		else{
-			inputData.data ++;
-		}
-		Controller_SetInputData(inputData);
-	}
-	else if (Button_GetState(&hBtnSpeedDown) == ACT_PUSHED) {
-		inputData.id = SPEED;
-		if (inputData.data == 0){
-			inputData.data = 0;
-		}
-		else{
-			inputData.data --;
-		}
-		Controller_SetInputData(inputData);
-	}
+   if (Button_GetState(&hBtnLcdMode) == ACT_RELEASED) {
+      inputData.id = LCD_MODE;
+      if (inputData.lcd_data >= 3){
+         inputData.lcd_data = 1;
+      }
+      else{
+         inputData.lcd_data ++;
+      }
+      Controller_SetInputData(inputData);
+   }
+   else if (Button_GetState(&hBtnRunStop) == ACT_PUSHED) {
+      inputData.id = RUN_STOP;
+      Controller_SetInputData(inputData);
+   }
+   else if (Button_GetState(&hBtnSpeedUp) == ACT_PUSHED) {
+      inputData.id = SPEED;
+      if (inputData.speed_data >= 9){
+         inputData.speed_data = 9;
+      }
+      else{
+         inputData.speed_data ++;
+      }
+      Controller_SetInputData(inputData);
+   }
+   else if (Button_GetState(&hBtnSpeedDown) == ACT_PUSHED) {
+      inputData.id = SPEED;
+      if (inputData.speed_data == 0){
+         inputData.speed_data = 0;
+      }
+      else{
+         inputData.speed_data --;
+      }
+      Controller_SetInputData(inputData);
+   }
 }
 
 void Listener_CheckUart()

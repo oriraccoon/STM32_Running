@@ -1,4 +1,5 @@
-../Core/ap/src/Controller.c:16:6:Controller_Excute	8	static
-../Core/ap/src/Controller.c:21:6:Controller_SetInputData	16	static
-../Core/ap/src/Controller.c:41:6:Controller_Mode	8	static
-../Core/ap/src/Controller.c:72:6:Time_curr	32	static
+../Core/ap/src/Controller.c:25:6:Controller_Excute	8	static
+../Core/ap/src/Controller.c:31:6:Controller_OutData	16	static
+../Core/ap/src/Controller.c:38:6:Controller_SetInputData	24	static
+../Core/ap/src/Controller.c:60:6:Controller_Mode	8	static
+../Core/ap/src/Controller.c:94:6:Time_curr	32	static

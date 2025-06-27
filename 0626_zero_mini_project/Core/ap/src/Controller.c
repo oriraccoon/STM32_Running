@@ -10,13 +10,30 @@ static void Controller_Mode();
 static void Time_curr();
 
 inputData_TypeDef controlData = {0};
-C2P_Data OutputData = {0};
+C2P_Data OutputData = {
+    .current_time = { .id = 0, .hour = 12, .min = 10, .sec = 0, .msec = 0 },
+    .running_time = { .id = 0, .hour = 0, .min = 0, .sec = 0, .msec = 0 },
+    .speed = 0,
+    .distance = 0,
+    .calories = 0,
+    .runstop = 0,
+    .lcd_mode = 0,
+    .song = 0
+};
 
 
 void Controller_Excute()
 {
 	Controller_Mode();
 }
+
+// C2P
+void Controller_OutData(C2P_Data *c2p_data)
+{
+	memcpy(c2p_data, &OutputData, sizeof(C2P_Data));
+}
+
+
 
 void Controller_SetInputData(inputData_TypeDef inputData)
 {
@@ -36,6 +53,8 @@ void Controller_SetInputData(inputData_TypeDef inputData)
 		controlData.id = SONG;
 	}
 	controlData.data = inputData.data;
+	controlData.lcd_data = inputData.lcd_data;
+	controlData.speed_data = inputData.speed_data;
 }
 
 void Controller_Mode()
@@ -45,14 +64,17 @@ void Controller_Mode()
 	{
 	case RUN_STOP:
 		OutputData.runstop ^= 1;
+		if(OutputData.runstop == 0){
+			 OutputData.speed = 0;
+		  }
 		break;
 
 	case LCD_MODE:
-		OutputData.lcd_mode = controlData.data;
+		OutputData.lcd_mode = controlData.lcd_data;
 		break;
 
 	case SPEED:
-		OutputData.speed = controlData.data;
+		OutputData.speed = controlData.speed_data;
 		break;
 
 	case ULTRA:

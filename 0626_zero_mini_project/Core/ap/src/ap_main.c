@@ -25,18 +25,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 
+
+
 int ap_main()
 {
 
 	HAL_TIM_Base_Start_IT(&htim2);
-
+	Motor_Start(((1*100)+5000));
 	while(1)
 	{
-		//		Listener_Excute();
-		//		Controller_Excute();
-		//		Presenter_Excute();
-		__HAL_TIM_SELECT_CCDMAREQUEST(&htim3, 500);
-		//__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 500);
+		Listener_Excute();
+		Controller_Excute();
+		Presenter_Excute();
 
 	}
 
@@ -47,8 +47,9 @@ void ap_init()
 {
 	Listener_Init();
 	Presenter_Init();
-	Sound_Init();
-	Sound_POWERON();
+	Motor_Init();
+//	Sound_Init();
+//	Sound_POWERON();
 }
 
 

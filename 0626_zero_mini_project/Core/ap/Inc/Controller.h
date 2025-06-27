@@ -19,7 +19,11 @@ enum {LCD_OFF=0, RUN_DIST, CAL_SPEED, SONG_TITLE, WARNING};
 typedef struct {
 	int id;
 	int data;
+	int lcd_data;
+	int speed_data;
 }inputData_TypeDef;
+
+extern inputData_TypeDef controlData;
 
 typedef struct{
 	watch_t current_time;
@@ -35,5 +39,6 @@ typedef struct{
 
 void Controller_SetInputData(inputData_TypeDef inputData);
 void Controller_Excute();
+void Controller_OutData(C2P_Data *c2p_data);
 
 #endif /* AP_CONTROLLER_H_ */
