@@ -13,7 +13,7 @@
 static void Presenter_DispFnd_CurrentTime(watch_t current_time);
 
 // uart
-static void Presenter_DispMonitor(char uartRxData);
+static void Presenter_DispMonitor(uint8_t uartRxData);
 static void Presenter_DispMonitorInfo();
 static void Presenter_DispMonitorSpeedInfo();
 static void Presenter_DispMonitorSongInfo();
@@ -87,7 +87,7 @@ void Presenter_DispLCD(uint8_t lcd_mode)
 }
 
 // UART DISP
-void Presenter_DispMonitor(char uartRxData)
+void Presenter_DispMonitor(uint8_t uartRxData)
 {
 	switch (uartRxData) {
 		case 'v':

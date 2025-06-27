@@ -34,7 +34,7 @@ typedef struct{
 	uint8_t runstop;
 	uint8_t lcd_mode;
 	uint8_t song;
-	char uartRxData;
+	uint8_t uartRxData;
 } C2P_Data;
 
 void Controller_SetInputData(inputData_TypeDef inputData);
