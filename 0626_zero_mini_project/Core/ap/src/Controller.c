@@ -63,10 +63,18 @@ void Controller_Mode()
 	switch(controlData.id)
 	{
 	case RUN_STOP:
+		controlData.id = NO_CONTROL;
 		OutputData.runstop ^= 1;
 		if(OutputData.runstop == 0){
 			 OutputData.speed = 0;
-		  }
+			 OutputData.lcd_mode = 0;
+			 OutputData.calories = 0;
+			 OutputData.distance = 0;
+		}
+		else {
+			OutputData.speed = 1;
+			OutputData.lcd_mode = 1;
+		}
 		break;
 
 	case LCD_MODE:
@@ -91,40 +99,48 @@ void Controller_Mode()
 }
 
 
-void Time_curr(){
-	uint8_t met;
-	OutputData.running_time = StopWatch_Excute();
-	OutputData.current_time = TimeWatch_Excute();
-	OutputData.distance = (OutputData.current_time.hour - OutputData.running_time.hour)*OutputData.speed + OutputData.speed* (OutputData.current_time.min - OutputData.running_time.min)/60;
+static uint8_t pre_sec = 0;
 
-	switch(OutputData.speed){
-	case 1:
-		met = 15;
-		break;
-	case 2:
-		met = 20;
-		break;
-	case 3:
-		met = 28;
-		break;
-	case 4:
-		met = 33;
-		break;
-	case 5:
-		met = 38;
-		break;
-	case 6:
-		met = 43;
-		break;
-	case 7:
-		met = 60;
-		break;
-	case 8:
-		met = 83;
-		break;
-	case 9:
-		met = 98;
-		break;
-	}
-	OutputData.calories = met * 72 * OutputData.distance /10;
+void Time_curr(){
+   uint8_t met;
+   OutputData.running_time = StopWatch_Excute();
+   OutputData.current_time = TimeWatch_Excute();
+   if(OutputData.running_time.sec != pre_sec){
+      OutputData.distance += 0.28;
+      pre_sec = OutputData.running_time.sec;
+   }
+
+   switch(OutputData.speed){
+   case 0:
+	   met = 0;
+	   break;
+   case 1:
+      met = 15;
+      break;
+   case 2:
+      met = 20;
+      break;
+   case 3:
+      met = 28;
+      break;
+   case 4:
+      met = 33;
+      break;
+   case 5:
+      met = 38;
+      break;
+   case 6:
+      met = 43;
+      break;
+   case 7:
+      met = 60;
+      break;
+   case 8:
+      met = 83;
+      break;
+   case 9:
+      met = 98;
+      break;
+   }
+   OutputData.calories = met * 72 * OutputData.distance /10000;
 }

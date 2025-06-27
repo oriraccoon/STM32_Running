@@ -2,4 +2,4 @@
 ../Core/ap/src/Controller.c:31:6:Controller_OutData	16	static
 ../Core/ap/src/Controller.c:38:6:Controller_SetInputData	24	static
 ../Core/ap/src/Controller.c:60:6:Controller_Mode	8	static
-../Core/ap/src/Controller.c:94:6:Time_curr	32	static
+../Core/ap/src/Controller.c:104:6:Time_curr	32	static

@@ -2,4 +2,4 @@
 ../Core/ap/src/stopWatch.c:23:6:StopWatch_IncTime	5
 ../Core/ap/src/stopWatch.c:50:9:StopWatch_Excute	3
 ../Core/ap/src/stopWatch.c:65:6:StopWatch_Run	2
-../Core/ap/src/stopWatch.c:91:6:StopWatch_Stop	2
+../Core/ap/src/stopWatch.c:90:6:StopWatch_Stop	2

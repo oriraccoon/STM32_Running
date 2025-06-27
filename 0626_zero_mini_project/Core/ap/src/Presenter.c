@@ -21,8 +21,8 @@ static void Presenter_DispMonitorDone();
 
 // lcd
 static void Presenter_DispLCD(uint8_t lcd_mode);
-static void Presenter_DispLCD_RUN_DIST(watch_t running_time, uint8_t distance);
-static void Presenter_DispLCD_CAL_SPEED(uint8_t calories, uint8_t speed);
+static void Presenter_DispLCD_RUN_DIST(watch_t running_time, double distance);
+static void Presenter_DispLCD_CAL_SPEED(double calories, uint8_t speed);
 static void Presenter_DispLCD_SONG_TITLE(uint8_t song);
 static void Presenter_DispLCD_WARNING();
 
@@ -133,7 +133,8 @@ void Presenter_DispMonitor(uint8_t uartRxData)
 // MOTOR RUN
 void Presenter_SpeedMotor(uint8_t speed)
 {
-	Motor_Start(((speed*100)+5000));
+	if (speed == 0) Motor_Stop();
+	else Motor_Start((5000-(speed*100)));
 }
 
 
@@ -189,24 +190,24 @@ void Presenter_DispMonitorDone()
 
 
 
-void Presenter_DispLCD_RUN_DIST(watch_t running_time, uint8_t distance)
+void Presenter_DispLCD_RUN_DIST(watch_t running_time, double distance)
 {
 	char str1[50];
 	char str2[50];
 
 	sprintf(str1, "RunTime:%02d:%02d:%02d", running_time.hour, running_time.min, running_time.sec);
-	sprintf(str2, "distance:%dm", distance);
+	sprintf(str2, "distance:%.2fm", distance);
 
 	LCD_writeStringXY(0, 0, str1);
 	LCD_writeStringXY(1, 0, str2);
 }
 
-void Presenter_DispLCD_CAL_SPEED(uint8_t calories, uint8_t speed)
+void Presenter_DispLCD_CAL_SPEED(double calories, uint8_t speed)
 {
 	char str1[50];
 	char str2[50];
 
-	sprintf(str1, "calories:%d", calories);
+	sprintf(str1, "calories:%.2f", calories);
 	sprintf(str2, "speed:%d", speed);
 
 	LCD_writeStringXY(0, 0, str1);
@@ -216,6 +217,9 @@ void Presenter_DispLCD_CAL_SPEED(uint8_t calories, uint8_t speed)
 void Presenter_DispLCD_SONG_TITLE(uint8_t song)
 {
 	switch (song) {
+		case 0:
+			LCD_writeStringXY(0, 0, "0");
+			break;
 		case 1:
 			LCD_writeStringXY(0, 0, "1");
 			break;

@@ -1,0 +1,21 @@
+!SESSION 2025-06-27 16:23:54.893 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-06-27 16:24:08.317
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-06-27 16:24:08.317
+!MESSAGE Log4j2 initialized with config file C:\Users\kccistc\Documents\GitHub\STM32_Running\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-06-27 16:24:10.678
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-06-27 16:24:34.719
+!MESSAGE Indexed '0626_zero_mini_project' (45 sources, 148 headers) in 4.53 sec: 14,510 declarations; 77,336 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.26%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-06-27 16:34:02.629
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@66cd3f05): Status OK: unknown code=0 OK' resulted in a rejected execution exception.

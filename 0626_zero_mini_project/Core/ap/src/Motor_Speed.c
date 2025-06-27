@@ -20,6 +20,5 @@ void Motor_Start(uint32_t speed)
 
 void Motor_Stop()
 {
-	DC_Motor_SetFreq(5000-1);
-	DC_Motor_Start();
+	DC_Motor_Stop();
 }

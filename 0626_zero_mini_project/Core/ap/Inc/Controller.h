@@ -29,8 +29,8 @@ typedef struct{
 	watch_t current_time;
 	watch_t running_time;
 	uint8_t speed;
-	uint8_t distance;
-	uint8_t calories;
+	double distance;
+	double calories;
 	uint8_t runstop;
 	uint8_t lcd_mode;
 	uint8_t song;

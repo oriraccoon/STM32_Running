@@ -31,12 +31,12 @@ int ap_main()
 {
 
 	HAL_TIM_Base_Start_IT(&htim2);
-	Motor_Start(((1*100)+5000));
 	while(1)
 	{
 		Listener_Excute();
 		Controller_Excute();
 		Presenter_Excute();
+//		Motor_Start(((1*100)+5000));
 
 	}
 

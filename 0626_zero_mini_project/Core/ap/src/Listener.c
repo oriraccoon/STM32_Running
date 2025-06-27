@@ -15,6 +15,7 @@ static void Listener_CheckUltra();
 
 static uint8_t rcvData = 0;
 static Que_TypeDef uartRxQue;
+static uint8_t toggleFlag = 0;
 
 inputData_TypeDef inputData = {0};
 
@@ -47,7 +48,7 @@ void Listener_CheckButton()
 
    if (Button_GetState(&hBtnLcdMode) == ACT_RELEASED) {
       inputData.id = LCD_MODE;
-      if (inputData.lcd_data >= 3){
+      if (inputData.lcd_data >= 4){
          inputData.lcd_data = 1;
       }
       else{
@@ -57,6 +58,8 @@ void Listener_CheckButton()
    }
    else if (Button_GetState(&hBtnRunStop) == ACT_PUSHED) {
       inputData.id = RUN_STOP;
+      toggleFlag ^= 1;
+      inputData.lcd_data = toggleFlag;
       Controller_SetInputData(inputData);
    }
    else if (Button_GetState(&hBtnSpeedUp) == ACT_PUSHED) {

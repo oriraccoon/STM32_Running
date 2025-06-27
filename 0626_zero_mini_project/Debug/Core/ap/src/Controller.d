@@ -1,6 +1,6 @@
 Core/ap/src/Controller.o: ../Core/ap/src/Controller.c \
- C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Controller.h \
- C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/stopWatch.h \
+ C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Controller.h \
+ C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/stopWatch.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -31,11 +31,11 @@ Core/ap/src/Controller.o: ../Core/ap/src/Controller.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Model_Watch.h \
- C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Controller.h \
- C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/timeWatch.h
-C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Controller.h:
-C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/stopWatch.h:
+ C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Model_Watch.h \
+ C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Controller.h \
+ C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/timeWatch.h
+C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Controller.h:
+C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/stopWatch.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -66,6 +66,6 @@ C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_ze
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Model_Watch.h:
-C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/Controller.h:
-C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0626_zero_mini_project/Core/ap/Inc/timeWatch.h:
+C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Model_Watch.h:
+C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/Controller.h:
+C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/ap/Inc/timeWatch.h:
