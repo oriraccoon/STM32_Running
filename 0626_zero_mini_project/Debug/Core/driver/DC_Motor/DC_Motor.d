@@ -1,5 +1,5 @@
 Core/driver/DC_Motor/DC_Motor.o: ../Core/driver/DC_Motor/DC_Motor.c \
- C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/DC_Motor/DC_Motor.h \
+ C:/Users/kccistc/Desktop/asd/0626_zero_mini_project/Core/driver/DC_Motor/DC_Motor.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -31,7 +31,7 @@ Core/driver/DC_Motor/DC_Motor.o: ../Core/driver/DC_Motor/DC_Motor.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h
-C:/Users/kccistc/Documents/GitHub/STM32_Running/0626_zero_mini_project/Core/driver/DC_Motor/DC_Motor.h:
+C:/Users/kccistc/Desktop/asd/0626_zero_mini_project/Core/driver/DC_Motor/DC_Motor.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:

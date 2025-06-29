@@ -1,6 +1,6 @@
 ../Core/ap/src/Sound.c:10:6:Sound_Init	8	static
-../Core/ap/src/Sound.c:17:6:Sound_POWERON	8	static
-../Core/ap/src/Sound.c:34:6:Sound_POWEROFF	8	static
-../Core/ap/src/Sound.c:51:6:Sound_Beethoven5	24	static
-../Core/ap/src/Sound.c:108:6:PlayNote	16	static
-../Core/ap/src/Sound.c:117:6:Sound_MerryChristmasMrLawrence	16	static
+../Core/ap/src/Sound.c:50:6:Sound_POWERON	8	static
+../Core/ap/src/Sound.c:67:6:Sound_POWEROFF	8	static
+../Core/ap/src/Sound.c:84:6:Sound_Beethoven5	24	static
+../Core/ap/src/Sound.c:141:6:PlayNote	16	static
+../Core/ap/src/Sound.c:150:6:Sound_MerryChristmasMrLawrence	16	static

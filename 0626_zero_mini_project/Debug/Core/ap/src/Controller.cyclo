@@ -1,5 +1,5 @@
-../Core/ap/src/Controller.c:25:6:Controller_Excute	1
-../Core/ap/src/Controller.c:31:6:Controller_OutData	1
-../Core/ap/src/Controller.c:38:6:Controller_SetInputData	6
-../Core/ap/src/Controller.c:60:6:Controller_Mode	8
-../Core/ap/src/Controller.c:104:6:Time_curr	12
+../Core/ap/src/Controller.c:28:6:Controller_Excute	1
+../Core/ap/src/Controller.c:34:6:Controller_OutData	1
+../Core/ap/src/Controller.c:41:6:Controller_SetInputData	6
+../Core/ap/src/Controller.c:66:6:Controller_Mode	10
+../Core/ap/src/Controller.c:118:6:Time_curr	12

@@ -1,0 +1,271 @@
+/*
+ * Presenter.c
+ *
+ *  Created on: Jun 24, 2025
+ *      Author: rhoblack
+ */
+#include "Presenter.h"
+#include <string.h>
+#include <stdio.h>
+#include "usart.h"
+
+static int onOffFlag = 0;
+
+// fnd
+static void Presenter_DispFnd_CurrentTime(watch_t current_time);
+
+// uart
+static void Presenter_DispMonitor(char uartRxData);
+static void Presenter_DispMonitorInfo();
+static void Presenter_DispMonitorSpeedInfo();
+static void Presenter_DispMonitorSongInfo();
+static void Presenter_DispMonitorDone();
+
+// lcd
+static void Presenter_DispLCD(uint8_t lcd_mode);
+static void Presenter_DispLCD_RUN_DIST(watch_t running_time, double distance);
+static void Presenter_DispLCD_CAL_SPEED(double calories, uint8_t speed);
+static void Presenter_DispLCD_SONG_TITLE(uint8_t song);
+static void Presenter_DispLCD_WARNING();
+
+static uint8_t prev_lcd_mode = LCD_OFF;
+
+// led
+static void Presenter_DispLED_Dist(double dist);
+
+// buzzer
+static void Presenter_SongBuzzer(uint8_t song);
+
+// motor
+static void Presenter_SpeedMotor(uint8_t speed);
+
+// Controller to Presenter Data
+static C2P_Data p_data;
+
+// Initial Func
+void Presenter_Init()
+{
+	LCD_Init(&hi2c1);
+	Motor_Init();
+	Sound_Init();
+}
+
+
+// Behavior Func at ap_main.c
+void Presenter_Excute()
+{
+	if (p_data.runstop == 1 && onOffFlag == 0) {
+		onOffFlag = 1;
+		Sound_POWERON();
+	}
+	else if (p_data.runstop == 0 && onOffFlag == 1) {
+		onOffFlag = 0;
+		Sound_POWEROFF();
+	}
+	Controller_OutData(&p_data);
+	Presenter_DispLCD(p_data.lcd_mode);
+//	Presenter_DispMonitor(p_data.uartRxData);
+	Presenter_DispFnd_CurrentTime(p_data.current_time);
+	Presenter_DispLED_Dist(p_data.distance);
+	//	Presenter_SongBuzzer(p_data.song);
+	Presenter_SpeedMotor(p_data.speed);
+}
+
+// LCD DISP
+void Presenter_DispLCD(uint8_t lcd_mode)
+{
+	if (prev_lcd_mode != lcd_mode) {
+		LCD_writeStringXY(0, 0, "                ");
+		LCD_writeStringXY(1, 0, "                ");
+	}
+	switch (lcd_mode) {
+		case LCD_OFF:
+			break;
+		case RUN_DIST:
+			Presenter_DispLCD_RUN_DIST(p_data.running_time, p_data.distance);
+			break;
+		case CAL_SPEED:
+			Presenter_DispLCD_CAL_SPEED(p_data.calories, p_data.speed);
+			break;
+		case SONG_TITLE:
+			Presenter_DispLCD_SONG_TITLE(p_data.song);
+			break;
+		case WARNING:
+			Presenter_DispLCD_WARNING();
+			break;
+	}
+	prev_lcd_mode = lcd_mode;
+}
+
+// UART DISP
+void Presenter_DispMonitor(char uartRxData)
+{
+	switch (uartRxData) {
+		case 'v':
+			Presenter_DispMonitorSpeedInfo();
+			break;
+		case 's':
+			Presenter_DispMonitorSongInfo();
+			break;
+		case '1':
+			Presenter_DispMonitorDone();
+			break;
+		case '2':
+			Presenter_DispMonitorDone();
+			break;
+		case '3':
+			Presenter_DispMonitorDone();
+			break;
+		case '4':
+			Presenter_DispMonitorDone();
+			break;
+		case '5':
+			Presenter_DispMonitorDone();
+			break;
+		case '6':
+			Presenter_DispMonitorDone();
+			break;
+		case '7':
+			Presenter_DispMonitorDone();
+			break;
+		case '8':
+			Presenter_DispMonitorDone();
+			break;
+		case '9':
+			Presenter_DispMonitorDone();
+			break;
+		default:
+			Presenter_DispMonitorInfo();
+			break;
+	}
+}
+
+
+// MOTOR RUN
+void Presenter_SpeedMotor(uint8_t speed)
+{
+	if (speed == 0) Motor_Stop();
+	else Motor_Start((5000-(speed*100)));
+}
+
+
+// Buzzer
+void Presenter_SongBuzzer(uint8_t song)
+{
+	Sound_Beethoven5();
+}
+
+
+void Presenter_DispFnd_CurrentTime(watch_t current_time)
+{
+	FND_WriteData(current_time.hour*100 + current_time.min);
+
+	FND_WriteDp(FND_DP_1000|FND_DP_10|FND_DP_1, FND_DP_OFF);
+
+	if (current_time.msec < 500) {
+		FND_WriteDp(FND_DP_100, FND_DP_ON);
+	}
+	else {
+		FND_WriteDp(FND_DP_100, FND_DP_OFF);
+	}
+}
+
+
+// UART Monitor Info(Speed, Song)
+void Presenter_DispMonitorInfo() // start
+{
+	char str[60];
+	strcpy(str,"Choose number\n1. Speed Setting(v)\t2. Choose Song(s)");
+	HAL_UART_Transmit(&huart2, (uint8_t *)str, strlen(str), 1000);
+}
+void Presenter_DispMonitorSpeedInfo()
+{
+	char str[50];
+	strcpy(str,"Type 0~9 Speed:");
+	HAL_UART_Transmit(&huart2, (uint8_t *)str, strlen(str), 1000);
+}
+void Presenter_DispMonitorSongInfo()
+{
+	char str[50];
+	strcpy(str,"Choose Song\n1. ~~~\t2. ~~~\t3. ~~~");
+	HAL_UART_Transmit(&huart2, (uint8_t *)str, strlen(str), 1000);
+}
+void Presenter_DispMonitorDone()
+{
+	char str[50];
+	strcpy(str,"Complete");
+	HAL_UART_Transmit(&huart2, (uint8_t *)str, strlen(str), 1000);
+}
+
+
+
+
+
+void Presenter_DispLCD_RUN_DIST(watch_t running_time, double distance)
+{
+	char str1[50];
+	char str2[50];
+
+	sprintf(str1, "RunTime:%02d:%02d:%02d", running_time.hour, running_time.min, running_time.sec);
+	sprintf(str2, "distance:%.2fm", distance);
+
+	LCD_writeStringXY(0, 0, str1);
+	LCD_writeStringXY(1, 0, str2);
+}
+
+void Presenter_DispLCD_CAL_SPEED(double calories, uint8_t speed)
+{
+	char str1[50];
+	char str2[50];
+
+	sprintf(str1, "calories:%.2f", calories);
+	sprintf(str2, "speed:%d", speed);
+
+	LCD_writeStringXY(0, 0, str1);
+	LCD_writeStringXY(1, 0, str2);
+}
+
+void Presenter_DispLCD_SONG_TITLE(uint8_t song)
+{
+	switch (song) {
+		case 0:
+			LCD_writeStringXY(0, 0, "0");
+			break;
+		case 1:
+			LCD_writeStringXY(0, 0, "1");
+			break;
+		case 2:
+			LCD_writeStringXY(0, 0, "2");
+			break;
+		case 3:
+			LCD_writeStringXY(0, 0, "3");
+			break;
+	}
+}
+
+void Presenter_DispLCD_WARNING()
+{
+	LCD_writeStringXY(0, 0, "TOO FAR!!!");
+}
+
+
+
+
+
+// LED (Dist)
+void Presenter_DispLED_Dist(double dist)
+{
+    static double sum = 0.0;
+    static int led_data = 0;
+
+    sum += dist;
+
+    while(sum >= 50.0)
+    {
+        led_data = (led_data << 1) + 1;
+        sum -= 50.0;
+    }
+
+    LedBar_Write(led_data);
+}
+

@@ -1,0 +1,178 @@
+11:10:33 **** Build of configuration Debug for project 0619_button_led ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/SystemClock" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/driver/SystemClock/SystemClock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/SystemClock/SystemClock.d" -MT"Src/driver/SystemClock/SystemClock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/SystemClock/SystemClock.o"
+arm-none-eabi-gcc "../Src/driver/LedBar/LedBar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/LedBar/LedBar.d" -MT"Src/driver/LedBar/LedBar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/LedBar/LedBar.o"
+arm-none-eabi-gcc "../Src/driver/GPIO/GPIO.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/GPIO/GPIO.d" -MT"Src/driver/GPIO/GPIO.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/GPIO/GPIO.o"
+arm-none-eabi-gcc "../Src/driver/FND/FND.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/FND/FND.d" -MT"Src/driver/FND/FND.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/FND/FND.o"
+arm-none-eabi-gcc "../Src/driver/Button/Button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/driver/Button/Button.d" -MT"Src/driver/Button/Button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/driver/Button/Button.o"
+arm-none-eabi-gcc "../Src/ap/ap_main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ap/ap_main.d" -MT"Src/ap/ap_main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/ap/ap_main.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/LedBar" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/Button" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/driver/FND" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/driver/FND/FND.c: In function 'FND_Display':
+../Src/driver/FND/FND.c:65:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   65 |         FND_Init(&D1, GPIOC, 8, PIN_RESET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:66:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   66 |         FND_Init(&D2, GPIOC, 6, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from ../Src/driver/Button/Button.c:8:
+../Src/driver/Button/Button.h:12:10: fatal error: SystemClock.h: No such file or directory
+   12 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+../Src/driver/FND/FND.c:67:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   67 |         FND_Init(&D3, GPIOC, 5, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+compilation terminated.
+../Src/driver/FND/FND.c:68:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   68 |         FND_Init(&D4, GPIOA, 12, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from ../Src/ap/ap_main.c:7:
+../Src/ap/ap_main.h:13:10: fatal error: SystemClock.h: No such file or directory
+   13 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+In file included from ../Src/main.c:2:
+C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0619_button_led/Src/ap/ap_main.h:13:10: fatal error: SystemClock.h: No such file or directory
+   13 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+../Src/driver/FND/FND.c:69:9: warning: implicit declaration of function 'FND_Write'; did you mean 'FND_Init'? [-Wimplicit-function-declaration]
+   69 |         FND_Write(num_1000);
+      |         ^~~~~~~~~
+      |         FND_Init
+../Src/driver/FND/FND.c:70:9: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+   70 |         delay(8);
+      |         ^~~~~
+../Src/driver/FND/FND.c:72:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   72 |         FND_Init(&D1, GPIOC, 8, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+make: *** [Src/driver/Button/subdir.mk:19: Src/driver/Button/Button.o] Error 1
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:73:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   73 |         FND_Init(&D2, GPIOC, 6, PIN_RESET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+make: *** Waiting for unfinished jobs....
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+make: *** [Src/ap/subdir.mk:19: Src/ap/ap_main.o] Error 1
+../Src/driver/FND/FND.c:74:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   74 |         FND_Init(&D3, GPIOC, 5, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:75:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |         FND_Init(&D4, GPIOA, 12, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:79:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |         FND_Init(&D1, GPIOC, 8, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:80:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   80 |         FND_Init(&D2, GPIOC, 6, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:81:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   81 |         FND_Init(&D3, GPIOC, 5, PIN_RESET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:82:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   82 |         FND_Init(&D4, GPIOA, 12, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:86:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   86 |         FND_Init(&D1, GPIOC, 8, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:87:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   87 |         FND_Init(&D2, GPIOC, 6, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:88:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   88 |         FND_Init(&D3, GPIOC, 5, PIN_SET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c:89:18: warning: passing argument 1 of 'FND_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+   89 |         FND_Init(&D4, GPIOA, 12, PIN_RESET);
+      |                  ^~~
+      |                  |
+      |                  Handler_FND_TypeDef **
+../Src/driver/FND/FND.c:32:36: note: expected 'Handler_FND_TypeDef *' but argument is of type 'Handler_FND_TypeDef **'
+   32 | void FND_Init(Handler_FND_TypeDef *hfnd, GPIO_TypeDef *GPIOx, uint32_t pinNum, pin_state_t pinState)
+      |               ~~~~~~~~~~~~~~~~~~~~~^~~~
+../Src/driver/FND/FND.c: At top level:
+../Src/driver/FND/FND.c:96:6: warning: conflicting types for 'FND_Write'; have 'void(uint32_t)' {aka 'void(long unsigned int)'}
+   96 | void FND_Write(uint32_t data)
+      |      ^~~~~~~~~
+../Src/driver/FND/FND.c:69:9: note: previous implicit declaration of 'FND_Write' with type 'void(uint32_t)' {aka 'void(long unsigned int)'}
+   69 |         FND_Write(num_1000);
+      |         ^~~~~~~~~
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+11:10:34 Build Failed. 7 errors, 19 warnings. (took 444ms)
+

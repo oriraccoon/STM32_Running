@@ -16,12 +16,16 @@ LedBar_TypeDef ledBar[8] = {
 		{GPIOA, GPIO_PIN_0},
 		{GPIOA, GPIO_PIN_1},
 		{GPIOA, GPIO_PIN_4},
-		{GPIOB, GPIO_PIN_0},
-		{GPIOC, GPIO_PIN_1},
+		{GPIOA, GPIO_PIN_5},
+		{GPIOA, GPIO_PIN_6},
 		{GPIOC, GPIO_PIN_0},
-		{GPIOC, GPIO_PIN_2},
-		{GPIOC, GPIO_PIN_3}
+		{GPIOC, GPIO_PIN_1},
+		{GPIOB, GPIO_PIN_7}
 };
+
+void LedBar_Init(){
+
+}
 
 void LedBar_Write(uint8_t data)
 {

@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
@@ -52,7 +53,12 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+int _write(int file, char* p, int len){
+	for(int i=0; i<len; i++){
+		ITM_SendChar((*p++));
+	}
+	return len;
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -89,6 +95,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM2_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
@@ -96,6 +103,8 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
+  MX_TIM11_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
   ap_init();
   /* USER CODE END 2 */

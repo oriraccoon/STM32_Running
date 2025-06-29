@@ -30,7 +30,8 @@ Core/driver/Ultra/Ultra.o: ../Core/driver/Ultra/Ultra.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/tim.h ../Core/Inc/main.h
+ ../Core/Inc/tim.h ../Core/Inc/main.h \
+ C:/Users/kccistc/Desktop/asd/0626_zero_mini_project/Core/driver/LedBar/LedBar.h
 ../Core/driver/Ultra/Ultra.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -64,3 +65,4 @@ Core/driver/Ultra/Ultra.o: ../Core/driver/Ultra/Ultra.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/main.h:
+C:/Users/kccistc/Desktop/asd/0626_zero_mini_project/Core/driver/LedBar/LedBar.h:

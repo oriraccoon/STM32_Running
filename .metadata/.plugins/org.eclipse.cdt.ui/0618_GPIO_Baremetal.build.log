@@ -1,0 +1,22 @@
+11:10:28 **** Build of configuration Debug for project 0618_GPIO_Baremetal ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/Driver/LEDBAR/LEDBAR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Driver/LEDBAR/LEDBAR.d" -MT"Src/Driver/LEDBAR/LEDBAR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/Driver/LEDBAR/LEDBAR.o"
+arm-none-eabi-gcc "../Src/Driver/GPIO/GPIO.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Driver/GPIO/GPIO.d" -MT"Src/Driver/GPIO/GPIO.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/Driver/GPIO/GPIO.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/GPIO" -I"C:/Users/kccistc/Documents/GitHub/Harman_STM32/workspace/stm32_workspace/0618_GPIO_Baremetal/Src/Driver/LEDBAR" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "0618_GPIO_Baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kccistc\Documents\GitHub\Harman_STM32\workspace\stm32_workspace\0618_GPIO_Baremetal\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0618_GPIO_Baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0618_GPIO_Baremetal.elf
+ 
+arm-none-eabi-size  0618_GPIO_Baremetal.elf 
+arm-none-eabi-objdump -h -S 0618_GPIO_Baremetal.elf  > "0618_GPIO_Baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+   1332	     64	   1568	   2964	    b94	0618_GPIO_Baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0618_GPIO_Baremetal.list
+ 
+
+11:10:30 Build Finished. 0 errors, 0 warnings. (took 1s.653ms)
+

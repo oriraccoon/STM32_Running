@@ -9,16 +9,19 @@
 static void Controller_Mode();
 static void Time_curr();
 
+static int prev_song = 0;
+
 inputData_TypeDef controlData = {0};
 C2P_Data OutputData = {
-    .current_time = { .id = 0, .hour = 12, .min = 10, .sec = 0, .msec = 0 },
-    .running_time = { .id = 0, .hour = 0, .min = 0, .sec = 0, .msec = 0 },
-    .speed = 0,
-    .distance = 0,
-    .calories = 0,
-    .runstop = 0,
-    .lcd_mode = 0,
-    .song = 0
+		.current_time = { .id = 0, .hour = 12, .min = 10, .sec = 0, .msec = 0 },
+		.running_time = { .id = 0, .hour = 0, .min = 0, .sec = 0, .msec = 0 },
+		.speed = 0,
+		.distance = 0,
+		.calories = 0,
+		.runstop = 0,
+		.lcd_mode = 0,
+		.ultra = 0,
+		.song = 1
 };
 
 
@@ -52,7 +55,10 @@ void Controller_SetInputData(inputData_TypeDef inputData)
 	else if(inputData.id == SONG){
 		controlData.id = SONG;
 	}
-	controlData.data = inputData.data;
+	OutputData.uartRxData = inputData.uart_data;
+
+	controlData.song_data = inputData.song_data;
+	controlData.ultra_data = inputData.ultra_data;
 	controlData.lcd_data = inputData.lcd_data;
 	controlData.speed_data = inputData.speed_data;
 }
@@ -60,41 +66,49 @@ void Controller_SetInputData(inputData_TypeDef inputData)
 void Controller_Mode()
 {
 	Time_curr();
+	if(OutputData.song != 3) prev_song = OutputData.song;
+//	// Ultra 수정부
+	if ((controlData.ultra_data > 100) && OutputData.runstop != 0){
+		OutputData.lcd_mode = WARNING;
+		OutputData.song = 3;
+		return;
+	}
+	OutputData.song = prev_song;
+
+
 	switch(controlData.id)
 	{
-	case RUN_STOP:
-		controlData.id = NO_CONTROL;
-		OutputData.runstop ^= 1;
-		if(OutputData.runstop == 0){
-			 OutputData.speed = 0;
-			 OutputData.lcd_mode = 0;
-			 OutputData.calories = 0;
-			 OutputData.distance = 0;
-		}
-		else {
-			OutputData.speed = 1;
-			OutputData.lcd_mode = 1;
-		}
-		break;
+		case RUN_STOP:
+			controlData.id = NO_CONTROL;
+			OutputData.runstop ^= 1;
+			if(OutputData.runstop == 0){
+				OutputData.speed = 0;
+				OutputData.lcd_mode = 0;
+				OutputData.calories = 0;
+				OutputData.distance = 0;
+			}
+			else {
+				OutputData.speed = 1;
+				OutputData.lcd_mode = 1;
+			}
+			break;
 
-	case LCD_MODE:
-		OutputData.lcd_mode = controlData.lcd_data;
-		break;
+		case LCD_MODE:
+			OutputData.lcd_mode = controlData.lcd_data;
+			break;
 
-	case SPEED:
-		OutputData.speed = controlData.speed_data;
-		break;
+		case SPEED:
+			OutputData.speed = controlData.speed_data;
+			OutputData.runstop = 1;
+			OutputData.lcd_mode = 2;
+			break;
 
-	case ULTRA:
-		if (controlData.data > 100){
-			OutputData.lcd_mode = WARNING;
-			OutputData.song = 3;
-		}
-		break;
-
-	case SONG:
-		OutputData.song = controlData.data;
-		break;
+		case SONG:
+			if(OutputData.runstop ==1){
+				OutputData.song = controlData.song_data;
+				OutputData.lcd_mode = 3;
+			}
+			break;
 	}
 }
 
@@ -102,45 +116,45 @@ void Controller_Mode()
 static uint8_t pre_sec = 0;
 
 void Time_curr(){
-   uint8_t met;
-   OutputData.running_time = StopWatch_Excute();
-   OutputData.current_time = TimeWatch_Excute();
-   if(OutputData.running_time.sec != pre_sec){
-      OutputData.distance += 0.28*OutputData.speed;
-      pre_sec = OutputData.running_time.sec;
-   }
+	uint8_t met;
+	OutputData.running_time = StopWatch_Excute();
+	OutputData.current_time = TimeWatch_Excute();
+	if(OutputData.running_time.sec != pre_sec){
+		OutputData.distance += 0.28*OutputData.speed;
+		pre_sec = OutputData.running_time.sec;
+	}
 
-   switch(OutputData.speed){
-   case 0:
-	   met = 0;
-	   break;
-   case 1:
-      met = 15;
-      break;
-   case 2:
-      met = 20;
-      break;
-   case 3:
-      met = 28;
-      break;
-   case 4:
-      met = 33;
-      break;
-   case 5:
-      met = 38;
-      break;
-   case 6:
-      met = 43;
-      break;
-   case 7:
-      met = 60;
-      break;
-   case 8:
-      met = 83;
-      break;
-   case 9:
-      met = 98;
-      break;
-   }
-   OutputData.calories = met * 72 * OutputData.distance /10000;
+	switch(OutputData.speed){
+	case 0:
+		met = 0;
+		break;
+	case 1:
+		met = 15;
+		break;
+	case 2:
+		met = 20;
+		break;
+	case 3:
+		met = 28;
+		break;
+	case 4:
+		met = 33;
+		break;
+	case 5:
+		met = 38;
+		break;
+	case 6:
+		met = 43;
+		break;
+	case 7:
+		met = 60;
+		break;
+	case 8:
+		met = 83;
+		break;
+	case 9:
+		met = 98;
+		break;
+	}
+	OutputData.calories = met * 72 * OutputData.distance /10000;
 }

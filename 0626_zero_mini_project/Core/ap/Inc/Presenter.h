@@ -20,6 +20,8 @@
 void Presenter_Init();
 void Presenter_Excute();
 void Presenter_OutData(C2P_Data c2p_data);
+void Presenter_UartCallBack();
+void Presenter_DispLEDMsbToggle();
 
 
 #endif /* AP_PRESENTER_H_ */

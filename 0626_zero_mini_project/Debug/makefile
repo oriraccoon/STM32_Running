@@ -68,8 +68,8 @@ all: main-build
 main-build: 0626_zero_mini_project.elf secondary-outputs
 
 # Tool invocations
-0626_zero_mini_project.elf 0626_zero_mini_project.map: $(OBJS) $(USER_OBJS) C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "0626_zero_mini_project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kccistc\Documents\GitHub\STM32_Running\0626_zero_mini_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0626_zero_mini_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+0626_zero_mini_project.elf 0626_zero_mini_project.map: $(OBJS) $(USER_OBJS) C:\Users\kccistc\Desktop\asd\0626_zero_mini_project\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "0626_zero_mini_project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kccistc\Desktop\asd\0626_zero_mini_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0626_zero_mini_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

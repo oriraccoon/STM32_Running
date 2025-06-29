@@ -1,0 +1,10 @@
+11:10:47 **** Build of configuration Debug for project 0626_lcd ****
+make -j16 all 
+arm-none-eabi-size  0626_lcd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23060	    220	   2228	  25508	   63a4	0626_lcd.elf
+Finished building: default.size.stdout
+ 
+
+11:10:47 Build Finished. 0 errors, 0 warnings. (took 337ms)
+

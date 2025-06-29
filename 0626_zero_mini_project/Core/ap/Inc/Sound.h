@@ -12,7 +12,9 @@
 #include "Octave.h"
 #include "tim.h"
 
-extern const int Song1[8];
+extern const int Song1[95];
+extern const int song2[16];
+extern const int song3[8];
 
 void Sound_Init();
 void Sound_POWERON();

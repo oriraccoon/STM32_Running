@@ -10,6 +10,6 @@
 #include "stm32f4xx_hal.h"
 
 void LedBar_Write(uint8_t data);
-
+void LedBar_Init();
 
 #endif /* DRIVER_LEDBAR_LEDBAR_H_ */

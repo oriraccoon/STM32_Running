@@ -18,4 +18,5 @@ void LCD_writeString(char *str);
 void LCD_gotoXY(uint8_t row, uint8_t col);
 void LCD_writeStringXY(uint8_t row, uint8_t col, char *str);
 
+
 #endif /* DRIVER_LCD_LCD_H_ */
