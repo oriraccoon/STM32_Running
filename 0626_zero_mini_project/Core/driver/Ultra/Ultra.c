@@ -21,7 +21,6 @@ static uint32_t echoEnd = 0;
 static int d = 15;
 
 int ultra_trig_set() {
-//	static uint32_t cnt = 0;
 	__HAL_TIM_SET_COUNTER(&htim10, 0);
 
 	HAL_GPIO_WritePin(Ultra_Trig.GPIOx, Ultra_Trig.pinNum, GPIO_PIN_RESET);
