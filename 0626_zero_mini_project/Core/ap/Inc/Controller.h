@@ -17,17 +17,6 @@ enum {STOPWATCH_RUN_STOP, STOPWATCH_CLEAR};
 enum {NO_CONTROL, LCD_MODE, RUN_STOP, MODE, SPEED, ULTRA, SONG};
 enum {LCD_OFF=0, RUN_DIST, CAL_SPEED, SONG_TITLE, WARNING};
 
-typedef struct {
-	int id;
-	int ultra_data;
-	int lcd_data;
-	int speed_data;
-	int song_data;
-	char uart_data;
-}inputData_TypeDef;
-
-extern inputData_TypeDef controlData;
-
 typedef struct{
 	watch_t current_time;
 	watch_t running_time;
@@ -40,6 +29,17 @@ typedef struct{
 	uint8_t ultra;
 	char uartRxData;
 } C2P_Data;
+
+typedef struct {
+	int id;
+	int ultra_data;
+	int lcd_data;
+	int speed_data;
+	int song_data;
+	char uart_data;
+}inputData_TypeDef;
+
+extern inputData_TypeDef controlData;
 
 void Controller_SetInputData(inputData_TypeDef inputData);
 void Controller_Excute();
